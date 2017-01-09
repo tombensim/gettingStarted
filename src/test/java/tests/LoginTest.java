@@ -1,8 +1,9 @@
 package tests;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.gen5.api.AfterAll;
+import org.junit.gen5.api.BeforeAll;
+import org.junit.gen5.api.DisplayName;
+import org.junit.gen5.api.Test;
 import pages.LoginPage;
 
 /**
@@ -16,21 +17,23 @@ public class LoginTest extends tests.TestBase {
     private static final String INVALID_USER = "invalid";
 
     private LoginPage loginPage = null;
-    @Before
+    @BeforeAll
     public void setUpLoginTests() {
         loginPage = new LoginPage(driver);
     }
     @Test
+    @DisplayName("Login To EriBank with valid Credentials")
     public void testLoginWithValidCreds()
     {
         loginPage.login(VALID_USER,VALID_PASSWORD);
     }
     @Test
+    @DisplayName("Fail to Login To EriBank with invalid Credentials")
     public void testFailToLoginWithInvalidCreds()
     {
         loginPage.login(INVALID_USER,INVALID_PASSWORD);
     }
-    @After
+    @AfterAll
     public void tearDownLoginTests()
     {
         driver.quit();

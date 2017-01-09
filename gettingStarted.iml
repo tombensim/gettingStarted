@@ -11,8 +11,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.testng:testng:6.10" level="project" />
-    <orderEntry type="library" name="Maven: com.beust:jcommander:1.48" level="project" />
+    <orderEntry type="library" name="Maven: org.junit:junit5-engine:5.0.0-ALPHA" level="project" />
+    <orderEntry type="library" name="Maven: org.junit:junit5-api:5.0.0-ALPHA" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.0.0-ALPHA" level="project" />
+    <orderEntry type="library" name="Maven: org.junit:junit-commons:5.0.0-ALPHA" level="project" />
+    <orderEntry type="library" name="Maven: org.junit:junit-engine-api:5.0.0-ALPHA" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:dimappium:10.3" level="project" />
     <orderEntry type="library" name="Maven: io.appium:java-client:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:2.53.1" level="project" />
@@ -72,7 +75,6 @@
     <orderEntry type="library" name="Maven: com.experitest:httpclient-4.5.2:9.0" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:httpcore-4.4.4:9.0" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:httpmime-4.5.2:9.0" level="project" />
-    <orderEntry type="library" name="Maven: com.experitest:junit-4.4:9.0" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:mobile-webdriver:9.0" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:selenium-api-2.42.2:9.0" level="project" />
     <orderEntry type="library" name="Maven: com.experitest:selenium-support-2.44.0:9.0" level="project" />

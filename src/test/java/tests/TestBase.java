@@ -6,8 +6,9 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.After;
-import org.junit.Before;
+
+import org.junit.gen5.api.AfterAll;
+import org.junit.gen5.api.BeforeAll;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -45,7 +46,7 @@ public class TestBase {
         this(null);
     }
 
-    @Before
+    @BeforeAll
     public void setUp() throws MalformedURLException {
         caps = new DesiredCapabilities();
         // App Capabilities
@@ -81,7 +82,7 @@ public class TestBase {
 
 
     }
-    @After
+    @AfterAll
     public void tearDown()
     {
         driver.quit();
