@@ -25,7 +25,7 @@ public class LoginTest extends tests.TestBase {
     {
         loginPage.login(VALID_USER,VALID_PASSWORD);
     }
-f    @Test
+    @Test
     public void testFailToLoginWithInvalidCreds()
     {
         loginPage.login(INVALID_USER,INVALID_PASSWORD);
