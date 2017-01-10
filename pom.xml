@@ -30,9 +30,10 @@
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit/junit5-engine -->
         <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>junit5-engine</artifactId>
-            <version>5.0.0-ALPHA</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>

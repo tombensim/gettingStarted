@@ -7,10 +7,11 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-import org.junit.gen5.api.AfterAll;
-import org.junit.gen5.api.BeforeAll;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -46,20 +47,22 @@ public class TestBase {
         this(null);
     }
 
-    @BeforeAll
+    @BeforeTest
     public void setUp() throws MalformedURLException {
         caps = new DesiredCapabilities();
         // App Capabilities
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
-        caps.setCapability(MobileCapabilityType.APP,"cloud:com.experitest.ExperiBank/.LoginActivity");
+//        caps.setCapability(MobileCapabilityType.APP,"com.experitest.ExperiBank/.LoginActivity");
         caps.setCapability(SeeTestCapabilityType.INSTRUMENT_APP, false);
-        caps.setCapability(MobileCapabilityType.NO_RESET, false);
+        caps.setCapability(MobileCapabilityType.NO_RESET, true);
 
         // Device Capabilities
         caps.setCapability(CapabilityType.PLATFORM,"android");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Android Device");
-        caps.setCapability(SeeTestCapabilityType.DEVICE_QUERY, "@name='samsung SM-N9005'");
+        caps.setCapability(SeeTestCapabilityType.DEVICE_QUERY,"@name='asus Nexus 7'");
+
+//        caps.setCapability(SeeTestCapabilityType.DEVICE_QUERY, "@name='samsung SM-N9005'");
 
         //Grid Connection configuration
         caps.setCapability(SeeTestCapabilityType.USE_REMOTE_GRID,"true");
@@ -77,15 +80,18 @@ public class TestBase {
           */
 
         //Driver initialization
-        driver = new SeeTestAndroidDriver<MobileElement>(new URL("http://sales.experitest.com/"),caps);
-//        driver = new IOSDriver<MobileElement>(new URL("http://tombensimhon:bf735e61-8327-486c-bd93-2ba0fefea02b@ondemand.saucelabs.com/wd/hub"), caps);
+        URL url =  new URL ("http://192.168.1.210/");
+        driver = new SeeTestAndroidDriver<MobileElement>(url,caps);
+
 
 
     }
-    @AfterAll
+    @AfterTest
     public void tearDown()
     {
-        driver.quit();
+
+        if (driver!=null)
+            driver.quit();
     }
 }
 
